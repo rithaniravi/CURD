@@ -7,8 +7,9 @@ const User=()=>{
     const[user,setUser]=useState([])
 
     useEffect(()=>{
-        axios.get("http://localhost:3001")
-        .then(res=>setUser(res.data))
+        axios.get("https://curd-fea3.onrender.com")
+        .then(res=>{setUser(res.data)
+            } )
         .catch(err=>console.log(err))
     },[])
 
