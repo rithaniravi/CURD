@@ -12,7 +12,7 @@ const Create=()=>{
 
     const handleSubmit=(e)=>{
         e.preventDefault()
-        axios.post('http://localhost:3001/create',{name,email,age})
+        axios.post(`${process.env.REACT_APP_BACKEND_URL}/create`,{name,email,age})
         .then(res=>{
             console.log(res)
             navigate("/")

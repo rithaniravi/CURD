@@ -7,13 +7,13 @@ const User=()=>{
     const[user,setUser]=useState([])
 
     useEffect(()=>{
-        axios.get("http://localhost:3001")
+        axios.get(`${process.env.REACT_APP_BACKEND_URL}`)
         .then(res=>setUser(res.data))
         .catch(err=>console.log(err))
     },[])
 
     const handleDelete=(id)=>{
-        axios.delete("http://localhost:3001/deleteUser/"+id)
+        axios.delete(`${process.env.REACT_APP_BACKEND_URL}/deleteUser/`+id)
         .then(res=>{console.log(res)
              window.location.reload()})
         .catch(err=>console.log(err))

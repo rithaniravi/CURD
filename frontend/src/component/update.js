@@ -10,7 +10,7 @@ const Update=()=>{
     const navigate=useNavigate()
 
     useEffect(()=>{
-        axios.get("http://localhost:3001/getUser/"+id)
+        axios.get(`${process.env.REACT_APP_BACKEND_URL}/getUser/`+id)
         .then(res=>{console.log(res.data)
             setName(res.data.name)
             setEmail(res.data.email)
@@ -19,7 +19,7 @@ const Update=()=>{
         .catch(err=>console.log(err))
     },[])
     const handleSubmit=(e)=>{  e.preventDefault()
-        axios.put('http://localhost:3001/updateUser/'+id,{name,email,age})
+        axios.put(`${process.env.REACT_APP_BACKEND_URL}/updateUser/`+id,{name,email,age})
         .then(res=>{
             console.log(res)
             navigate("/")
