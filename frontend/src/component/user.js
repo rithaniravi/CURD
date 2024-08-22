@@ -7,7 +7,7 @@ const User=()=>{
     const[user,setUser]=useState([])
 
     useEffect(()=>{
-        axios.get(`${process.env.REACT_APP_BACKEND_URL}`)
+        axios.get(`${process.env.REACT_APP_BACKEND_URL}/home`)
         .then(res=>setUser(res.data))
         .catch(err=>console.log(err))
     },[])
