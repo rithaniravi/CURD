@@ -10,7 +10,7 @@ const Update=()=>{
     const navigate=useNavigate()
 
     useEffect(()=>{
-        axios.get(`${process.env.REACT_APP_BACKEND_URL}/getUser/`+id)
+        axios.get("https://curd-fea3.onrender.com/getUser/"+id)
         .then(res=>{console.log(res.data)
             setName(res.data.name)
             setEmail(res.data.email)
@@ -19,7 +19,7 @@ const Update=()=>{
         .catch(err=>console.log(err))
     },[])
     const handleSubmit=(e)=>{  e.preventDefault()
-        axios.put(`${process.env.REACT_APP_BACKEND_URL}/updateUser/`+id,{name,email,age})
+        axios.put("https://curd-fea3.onrender.com/updateUser/"+id,{name,email,age})
         .then(res=>{
             console.log(res)
             navigate("/")

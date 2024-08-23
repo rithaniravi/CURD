@@ -14,7 +14,7 @@ const User=()=>{
     },[])
 
     const handleDelete=(id)=>{
-        axios.delete(`${process.env.REACT_APP_BACKEND_URL}/deleteUser/`+id)
+        axios.delete("https://curd-fea3.onrender.com/deleteUser/"+id)
         .then(res=>{console.log(res)
              window.location.reload()})
         .catch(err=>console.log(err))

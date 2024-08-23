@@ -13,7 +13,7 @@ const Create=()=>{
 
     const handleSubmit=(e)=>{
         e.preventDefault()
-        axios.post(`${process.env.REACT_APP_BACKEND_URL}/create`,{name,email,age})
+        axios.post("https://curd-fea3.onrender.com/create",{name,email,age})
         .then(res=>{
             console.log(res)
             navigate("/")
