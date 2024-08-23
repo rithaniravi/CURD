@@ -5,7 +5,10 @@ const connectDatabase=require('./db')
 // const mongoose=require("mongoose")
 const UserModel=require('./schema')
 const app=express()
-app.use(cors())
+app.use(cors({
+    origin:["http://localhost:3000"],
+    credentials:true
+  }))
 app.use(express.json())
 
 dotenv.config();
