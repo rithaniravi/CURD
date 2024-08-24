@@ -17,7 +17,7 @@ const Update=()=>{
             setAge(res.data.age)
         })
         .catch(err=>console.log(err))
-    },[])
+    },[id])
     const handleSubmit=(e)=>{  e.preventDefault()
         axios.put("https://curd-fea3.onrender.com/updateUser/"+id,{name,email,age})
         .then(res=>{
