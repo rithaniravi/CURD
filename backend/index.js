@@ -6,7 +6,7 @@ const connectDatabase=require('./db')
 const UserModel=require('./schema')
 const app=express()
 app.use(cors({
-    origin:["http://localhost:3000"],
+    origin:["https://curdfrontend-4kqo.onrender.com"],
     credentials:true
   }))
 app.use(express.json())
